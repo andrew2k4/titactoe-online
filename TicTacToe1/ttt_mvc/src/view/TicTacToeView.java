@@ -2,6 +2,7 @@ package view;
 
 import controller.TicTacToeControllerInterface;
 import model.TicTacToeModelInterface;
+import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -137,11 +138,13 @@ public class TicTacToeView extends JPanel {
             public void mousePressed(MouseEvent ev) {
                 byte c = (byte) (ev.getPoint().getX() / UNIT);
                 byte r = (byte) (ev.getPoint().getY() / UNIT);
+
                 try {
                     controller.whenMousePressed(c, r);
-                } catch (IOException e) {
+                } catch (IOException | ParseException e) {
                     throw new RuntimeException(e);
                 }
+
             }
         });
         f.setVisible(true);

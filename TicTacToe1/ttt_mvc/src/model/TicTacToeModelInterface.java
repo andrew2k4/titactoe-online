@@ -8,6 +8,10 @@ public interface TicTacToeModelInterface {
      */
     int getRows();
 
+
+     byte[][] getB() ;
+     void setB(byte[][] b) ;
+
     /**
      * Gets the number of columns in the board.
      *
@@ -60,7 +64,7 @@ public interface TicTacToeModelInterface {
      * @param p the move represented as a Pair.
      * @return a new TicTacToeModelImpl reflecting the move.
      */
-    TicTacToeModelInterface doMove(Pair p,byte player);
+    TicTacToeModelInterface doMove(Pair p, byte player);
 
     /**
      * Returns the opposite player.

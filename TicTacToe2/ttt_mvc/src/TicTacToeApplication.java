@@ -6,6 +6,8 @@ import model.TicTacToeModelImpl;
  * From here we start the program.
  */
 public class TicTacToeApplication {
+
+
     /**
      * main-Method for starting the application.
      * @param args no optional args required.

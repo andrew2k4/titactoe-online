@@ -1,7 +1,8 @@
 package controller;
 
+import org.json.simple.parser.ParseException;
+
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 /**
  * This interface defines the contract for our controller.
@@ -17,8 +18,6 @@ public interface TicTacToeControllerInterface {
      * @param c the column index of the position where the mouse is pressed.
      * @param r the row index of the position where the mouse is pressed
      */
-    public void whenMousePressed(byte c, byte r) throws IOException;
-
-
-
+    public void whenMousePressed(byte c, byte r) throws IOException, ParseException;
+    public void updateViewObserver();
 }

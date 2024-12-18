@@ -34,6 +34,16 @@ public class TicTacToeModelImpl implements TicTacToeModelInterface, Cloneable {
      */
     final byte columns = 3;
 
+    @Override
+    public byte[][] getB() {
+        return b;
+    }
+
+    @Override
+    public void setB(byte[][] b) {
+        this.b = b;
+    }
+
     /**
      * Game board represented as 2D array.
      */
@@ -190,7 +200,7 @@ public class TicTacToeModelImpl implements TicTacToeModelInterface, Cloneable {
      * @return a new TicTacToeModelImpl reflecting the move.
      */
     @Override
-    public TicTacToeModelImpl doMove(Pair m, byte player) {
+    public TicTacToeModelImpl doMove(Pair m,byte player) {
         TicTacToeModelImpl result = clone();
         result.player = player;
         result.b[m.fst][m.snd] = player;
@@ -309,7 +319,7 @@ public class TicTacToeModelImpl implements TicTacToeModelInterface, Cloneable {
             for (int i = 0; i < result.b.length; i++) {
                 result.b[i].clone();
             }
-        } catch (CloneNotSupportedException _) {}
+        } catch (CloneNotSupportedException ignored) {}
         return result;
     }
 }
